@@ -1,0 +1,70 @@
+.header {
+  background: #007bff !important;
+  color: #ffffff !important;
+  display: flex;
+  align-items: center;
+  height: 10vh !important;
+  justify-content: space-between;
+}
+.circle {
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+  background: #ffffff !important;
+}
+.full-height {
+  min-height: 90vh !important;
+}
+.full-height-2 {
+  min-height: 100vh !important;
+}
+.center {
+  align-items: center !important;
+  justify-content: center !important;
+  display: flex !important;
+}
+.brand h1 {
+  color: #007bff;
+  font-size: 4.5em;
+  margin-bottom: 0px;
+}
+.brand h4 {
+  color: #2596be;
+  font-size: 1.5em;
+  max-width: 195px;
+  word-break: break-word;
+}
+.card-header {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+.card-header span {
+  width: 60px !important;
+  height: 60px !important;
+}
+.form-control button,
+.form-control input,
+.form-control a {
+  width: 100% !important;
+  /* height: 40px !important; */
+  border-radius: 5px !important;
+}
+.create-new a {
+  background: #46acd4 !important;
+}
+.divider {
+  margin: 2px 0 !important;
+}
+
+.form-control-2 .ant-form-item-control-input-content span,
+.form-control .ant-form-item-control-input-content span {
+  border-radius: 5px !important;
+}
+
+.form-control-2 button,
+.form-control-2 input,
+.form-control-2 a {
+  width: 100% !important;
+  border-radius: 5px !important;
+}
