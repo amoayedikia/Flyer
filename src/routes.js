@@ -1,33 +1,53 @@
-import HomeScreen from "./screens/home";
+import Home from "./screens/home";
 import LoginScreen from "./screens/login";
-import RegisterScreen from "./screens/register";
+import Signup from "./screens/signup";
+import Workspace from "./screens/workspace";
+import Membership from "./screens/membership";
 
+// defaultRoutes is accessible for when you are NOT logged in
 const defaultRoutes = [
   {
     path: "/home",
-    component: HomeScreen
+    component: Home,
+  },
+  {
+    path: "/workspace",
+    component: Workspace,
+  },
+  {
+    path: "/membership",
+    component: Membership,
   },
   {
     path: "/login",
-    component: LoginScreen
+    component: LoginScreen,
   },
   {
-    path: "/home/:id",
-    component: HomeScreen
-  }
+    path: "/signup",
+    component: Signup,
+  },
+  {
+    path: "/workspace/:id",
+    component: Workspace,
+  },
 ];
+// authRoutes is accessible for when you are logged in
 const authRoutes = [
   {
+    path: "/home",
+    component: Home,
+  },
+  {
     path: "/login",
-    component: LoginScreen
+    component: LoginScreen,
   },
   {
-    path: "/register",
-    component: RegisterScreen
+    path: "/signup",
+    component: Signup,
   },
   {
-    path: "/home/:id",
-    component: HomeScreen
-  }
+    path: "/workspace/:id",
+    component: Workspace,
+  },
 ];
 export { defaultRoutes, authRoutes };

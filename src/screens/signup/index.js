@@ -4,7 +4,8 @@ import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
 import { signUp as createUser, _alert } from "../../api";
 import { useHistory } from "react-router";
 
-const RegisterScreen = () => {
+// const RegisterScreen = () => {
+const Signup = () => {
   const [form] = Form.useForm();
   const [requiredMark, setRequiredMarkType] = useState(true);
   const [loading, setLoading] = useState(false);
@@ -25,29 +26,29 @@ const RegisterScreen = () => {
       isRequired: true,
       isSecureContext: false,
       placeholder: "Email",
-      label: "Email"
+      label: "Email",
     },
     {
       field: "username",
       isRequired: true,
       isSecureContext: false,
       placeholder: "Username",
-      label: "Username"
+      label: "Username",
     },
     {
       field: "password",
       isRequired: true,
       isSecureContext: true,
       placeholder: "Password",
-      label: "Password"
+      label: "Password",
     },
     {
       field: "confirmPassword",
       isRequired: true,
       isSecureContext: true,
       placeholder: "Confirm Password",
-      label: "Confirm Password"
-    }
+      label: "Confirm Password",
+    },
   ];
   const handleInputChange = (e, field) => {
     let previosState = { ...state };
@@ -153,4 +154,4 @@ const RegisterScreen = () => {
     </Layout>
   );
 };
-export default RegisterScreen;
+export default Signup;

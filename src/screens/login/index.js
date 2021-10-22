@@ -7,7 +7,7 @@ import {
   Form,
   Input,
   Button,
-  Divider
+  Divider,
 } from "antd";
 import { useContext, useEffect, useState } from "react";
 import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
@@ -49,20 +49,20 @@ const LoginScreen = () => {
       accessToken: response.signInUserSession?.accessToken?.jwtToken,
       refreshToken: response.signInUserSession?.refreshToken?.token,
       idToken: response.signInUserSession?.idToken?.jwtToken,
-      userId: response.attributes?.sub
+      userId: response.attributes?.sub,
     };
 
     login(JSON.stringify(tokens));
-    history.push("home");
+    history.push("workspace");
   };
   useEffect(() => {
-    if (localStorage.getItem("token")) history.push("home");
+    if (localStorage.getItem("token")) history.push("workspace");
   }, []);
   return (
     <Layout>
-      <Header className="header">
+      {/* <Header className="header">
         <div className="circle" />
-      </Header>
+      </Header> */}
       <Row>
         <Col className="full-height center" span={12}>
           <div className="brand">

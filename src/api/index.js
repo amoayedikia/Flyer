@@ -2,6 +2,7 @@ import { message } from "antd";
 import instance from "./instance";
 import { Auth } from "aws-amplify";
 import axios from "axios";
+
 const baseURL = "https://pb7y08fw6d.execute-api.ap-southeast-2.amazonaws.com";
 const getHeaders = () => {
   try {
@@ -55,6 +56,22 @@ const getUser = () => {
   if (user) return JSON.parse(user);
   else return null;
 };
+
+const signOut = async (e) => {
+  e.preventDefault();
+  await Auth.signOut()
+    .then(() => {
+      localStorage.removeItem("token");
+      _alert("Signed out successfully", "success");
+    })
+    .catch((err) => {
+      _alert(err.message ?? "Signout failed", "error");
+    })
+    .finally(() => {
+      window.location.reload();
+    });
+};
+
 export {
   getData,
   postData,
@@ -63,5 +80,6 @@ export {
   _alert,
   signIn,
   confirmSignUp,
-  getUser
+  getUser,
+  signOut,
 };

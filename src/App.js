@@ -1,14 +1,21 @@
+import React from "react";
 import "./App.css";
 import {
   HashRouter as Router,
   Switch,
   Route,
-  Redirect
+  Redirect,
 } from "react-router-dom";
 import { createContext, useEffect, useState } from "react";
 import { authRoutes, defaultRoutes } from "./routes";
-// import { AuthContext, AuthContextProvider } from "./context";
+import { Auth } from "aws-amplify";
+import Membership from "./screens/membership/index";
+import Home from "./screens/home/index";
 
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
+
+// import { AuthContext, AuthContextProvider } from "./context";
 export const AuthContext = createContext();
 
 function App() {
@@ -34,23 +41,31 @@ function App() {
     logout,
     login,
     routes,
-    isUserAuthenticated
+    isUserAuthenticated,
   };
   return (
     <AuthContext.Provider value={value}>
       <Router>
+        <Navbar />
+        <Route exact path="/" render={(props) => <Home {...props} />} />
         <Switch>
-          <Route
+          {/* <Route
             exact
             path="/"
             render={() => {
               return isUserAuthenticated ? (
-                <Redirect to="/home" />
+                <Redirect to="/membership" />
               ) : (
-                <Redirect to="/login" />
+                <Redirect to="/" />
               );
             }}
+          /> */}
+          <Route
+            exact
+            path="/membership"
+            render={(props) => <Membership {...props} />}
           />
+
           {isUserAuthenticated
             ? defaultRoutes.map((route, index) => (
                 <Route exact {...route} key={index} />
@@ -59,9 +74,45 @@ function App() {
                 <Route exact {...route} key={index} />
               ))}
         </Switch>
+        <Footer />
       </Router>
     </AuthContext.Provider>
   );
 }
 
 export default App;
+
+//       <AuthContext.Provider value={value}>
+//       <Router>
+//           <Navbar/>
+
+//           <Switch>
+//             <Route
+//               exact
+//               path="/"
+//               render={(props) => {
+//                 return isUserAuthenticated ? (
+//                   <Redirect to="/workspace"  />
+//                 ) : (
+//                   <Redirect to="/home"  />
+//                 );
+//               }}
+//             />
+//             <Route
+//               exact
+//               path="/membership"
+//               render={(props) => <Membership {...props} />}
+//             />
+//             {isUserAuthenticated
+//               ? defaultRoutes.map((route, index) => (
+//                   <Route exact {...route} key={index} />
+//                 ))
+//               : authRoutes.map((route, index) => (
+//                   <Route exact {...route} key={index} />
+//                 ))}
+//           </Switch>
+//           <Footer />
+//         </Router>
+//         </AuthContext.Provider>
+//         );
+// }
