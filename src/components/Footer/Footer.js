@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: "200px",
   },
   footer: {
-    position: "static",
+    position: "fixed",
     padding: theme.spacing(3, 2),
     backgroundColor:
       theme.palette.type === "light"
@@ -48,7 +48,7 @@ const Footer = () => {
       >
         <Container maxWidth="lg">
           <Grid container spacing={3}>
-            <Grid item xs={12} sm={6} md={3}>
+            {/* <Grid item xs={12} sm={6} md={3}>
               <Box fontWeight="fontWeightBold" borderBottom={1}>
                 Help
               </Box>
@@ -81,9 +81,9 @@ const Footer = () => {
                   </Link>
                 </Box>
               </Router>
-            </Grid>
+            </Grid> */}
 
-            <Grid item xs={12} sm={6} md={3}>
+            {/* <Grid item xs={12} sm={6} md={3}>
               <Box fontWeight="fontWeightBold" borderBottom={1}>
                 Follow Us{" "}
               </Box>
@@ -111,7 +111,7 @@ const Footer = () => {
                   </Link>
                 </Box>
               </Router>
-            </Grid>
+            </Grid> */}
           </Grid>
           <div className={classes.copyright}>
             <Copyright />

@@ -47,15 +47,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Navbar = (props) => {
-  //   const id = auth.id;
-  // const { logout } = useContext(AuthContext);
-
   let _user = getUser();
 
   const history = useHistory();
 
   const classes = useStyles();
-  // const { history } = props;
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const theme = useTheme();
