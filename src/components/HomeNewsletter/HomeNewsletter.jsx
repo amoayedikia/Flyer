@@ -4,13 +4,11 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
-// import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const validationSchema = yup.object({
   email: yup.string("Enter your email").email("Enter a valid email"),
 });
 
-// const theme = createTheme();
 
 export default function SignUp() {
   const formik = useFormik({
@@ -20,7 +18,6 @@ export default function SignUp() {
   });
 
   return (
-    // <ThemeProvider theme={theme}>
     <form onSubmit={formik.handleSubmit}>
       <TextField
         id="newsletterEmail"
@@ -35,6 +32,5 @@ export default function SignUp() {
         Submit
       </Button>
     </form>
-    // </ThemeProvider>
   );
 }
