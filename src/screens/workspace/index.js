@@ -300,12 +300,12 @@ const Workspace = () => {
         >
           <Form.Item
             className="form-control"
-            label="Social Platform"
+            label="Platform"
             required
             tooltip="Social platform name"
           >
             <Input
-              placeholder="Social platform name"
+              placeholder="Platform name"
               onChange={(e) => {
                 handleInputChange(e, "name");
               }}
