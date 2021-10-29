@@ -135,7 +135,7 @@ const LoginScreen = () => {
               </Form.Item>
               <Divider dashed className="divider" />
               <Form.Item className="form-control create-new">
-                <Button type="primary" size="large" href="#/register">
+                <Button type="primary" size="large" href="#/signup">
                   Create New Account
                 </Button>
               </Form.Item>
